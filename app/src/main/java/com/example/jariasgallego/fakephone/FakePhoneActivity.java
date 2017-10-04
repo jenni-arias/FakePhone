@@ -29,13 +29,18 @@ public class FakePhoneActivity extends AppCompatActivity {
         btn_trucar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(FakePhoneActivity.this, "Trucant al... " + num_telefono.getText(), Toast.LENGTH_LONG).show();
+                String resultado =  getResources().getString(R.string.Trucant);
+                Toast.makeText(FakePhoneActivity.this,  resultado + (num_telefono.getText().toString()) , Toast.LENGTH_LONG).show();
             }
         });
     }
 
     public void clicat_esborra(View v) {
-        num_telefono.setText("");
+        String numeros = num_telefono.getText().toString();
+        if(numeros.length() > 0) {
+            String actual = numeros.substring(0,num_telefono.length()-1);
+            num_telefono.setText(actual);
+        }
     }
 
 }

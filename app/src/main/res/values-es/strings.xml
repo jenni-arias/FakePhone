@@ -3,4 +3,5 @@
     <string name="app_name">FakePhone</string>
     <string name="esborra">Borrar</string>
     <string name="trucar">Llamar</string>
+    <string name="Trucant">Llamando a...</string>
 </resources>

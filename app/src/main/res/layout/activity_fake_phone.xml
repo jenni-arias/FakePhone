@@ -11,12 +11,13 @@
         android:id="@+id/num_telefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="phone"
-        android:layout_marginTop="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/btn_1"
@@ -149,11 +150,12 @@
         android:id="@+id/btn_esborra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableBottom="@android:drawable/ic_delete"
+        android:onClick="clicat_esborra"
+        android:text="@string/esborra"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="clicat_esborra"
-        android:text="@string/esborra" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btn_trucar"
@@ -162,7 +164,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:onClick="clicat"
+        android:layout_alignTop="@+id/btn_esborra"
+        android:drawableBottom="@android:drawable/stat_sys_phone_call_forward"
+        android:onClick="clicat_trucar"
         android:text="@string/trucar" />
 
 </RelativeLayout>

@@ -26,13 +26,7 @@ public class FakePhoneActivity extends AppCompatActivity {
         Button boto = (Button) v;                                    // Convertir en botón la variable Boton
         String num = boto.getText().toString();
         num_telefono.setText(concat_num.getText().toString() + num);
-        btn_trucar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String resultado =  getResources().getString(R.string.Trucant);
-                Toast.makeText(FakePhoneActivity.this,  resultado + (num_telefono.getText().toString()) , Toast.LENGTH_LONG).show();
-            }
-        });
+        num_telefono.setSelection(num_telefono.length());
     }
 
     public void clicat_esborra(View v) {
@@ -40,10 +34,16 @@ public class FakePhoneActivity extends AppCompatActivity {
         if(numeros.length() > 0) {
             String actual = numeros.substring(0,num_telefono.length()-1);
             num_telefono.setText(actual);
+            num_telefono.setSelection(num_telefono.length());
         }
     }
 
+    public void clicat_trucar (View v) {
+        String resultado =  getResources().getString(R.string.Trucant);
+        Toast.makeText(FakePhoneActivity.this,  resultado + (num_telefono.getText().toString()) , Toast.LENGTH_LONG).show();
+    }
+
+
 }
 
-// TODO: Traducir todo correctamente e intentar mejorar el código.
 
